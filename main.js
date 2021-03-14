@@ -76,6 +76,14 @@ function my_keydown(e){
         console.log("key s ");
         car2_down();
     }
+    if(car1_x>600){
+        console.log("Car1 won");
+        document.getElementById("game_status").innerHTML="Car 1 Won!!";
+    }
+    if(car2_x>600){
+        console.log("Car 2 won");
+        document.getElementById("game_status").innerHTML="Car 2 Won!";
+    }
 }
 
 function car1_up(){
@@ -106,7 +114,7 @@ function car1_left(){
     }
 }
 function car1_right(){
-    if(car1_x<=600){
+    if(car1_x<=700){
         car1_x=car1_x+10;
         console.log("When left arrow is pressed, then x="+car1_x+", y= "+car1_y);
         uploadBackground();
@@ -142,11 +150,20 @@ function car2_left(){
     }
 }
 function car2_right(){
-    if(car2_x<=600){
+    if(car2_x<=700){
         car2_x=car2_x+10;
         console.log("When a key is pressed, then x= "+car2_x+", y= "+car2_y);
         uploadBackground();
         uploadcar1();
         uploadcar2();
     }
+}
+
+if(car1_x>600){
+    console.log("Car1 won");
+    document.getElementById("game_status").innerHTML="Car 1 Won!!";
+}
+if(car2_x>600){
+    console.log("Car 2 won");
+    document.getElementById("game_status").innerHTML="Car 2 Won!";
 }
